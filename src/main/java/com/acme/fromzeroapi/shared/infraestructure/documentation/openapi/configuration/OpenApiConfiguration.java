@@ -11,19 +11,19 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfiguration {
     @Bean
-    public OpenAPI fromZeroApiOpenApi() {
+    public OpenAPI talentForgeApiOpenApi() {
         // General configuration
         var openAPI = new OpenAPI();
         openAPI.info(new Info()
-                        .title("From Zero Web Application API")
-                        .description("From Zero Web Application API documentation.")
+                        .title("Talent Forge Web Application API")
+                        .description("Talent Forge Web Application API documentation.")
                         .version("v1.0.0")
                         .license(new License()
                                 .name("Apache 2.0")
                                 .url("https://springdoc.org")))
                 .externalDocs(new ExternalDocumentation()
-                        .description("From Zero Api wiki Documentation")
-                        .url("https://from-zero-api.wiki.github.io/docs"));
+                        .description("Talent Forge Api wiki Documentation")
+                        .url("https://talent-forge-api.wiki.github.io/docs"));
         return openAPI;
     }
 }

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.acme</groupId>
-	<artifactId>FromZeroApi</artifactId>
+	<artifactId>TalentForgeApi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>WebMasterApi</name>
 	<description>WebMasterApi</description>

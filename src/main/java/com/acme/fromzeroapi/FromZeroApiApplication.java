@@ -34,23 +34,36 @@ public class FromZeroApiApplication {
 		};
 	}
 
-	/*@Bean
+	@Bean
 	CommandLineRunner runner(ProgrammingLanguagesRepository languagesRepository,
-							 FrameworksRepository frameworksRepository){
-		return (String... args)->{
-			List<ProgrammingLanguage> languageList=Arrays.asList(
-					new ProgrammingLanguage("Javascript"),
-					new ProgrammingLanguage("Typescript"),
-					new ProgrammingLanguage("HTML"),
-					new ProgrammingLanguage("CSS")
-			);
-			List<Framework> frameworksList = Arrays.asList(
-					new Framework("Vue Js"),
-					new Framework("Angular"),
-					new Framework("React")
-			);
-			languagesRepository.saveAll(languageList);
-			frameworksRepository.saveAll(frameworksList);
+							 FrameworksRepository frameworksRepository) {
+		return (String... args) -> {
+			// Verificar si las tablas de lenguajes y frameworks están vacías
+			if (languagesRepository.count() == 0) {
+				List<ProgrammingLanguage> languageList = Arrays.asList(
+						new ProgrammingLanguage("Javascript"),
+						new ProgrammingLanguage("Typescript"),
+						new ProgrammingLanguage("HTML"),
+						new ProgrammingLanguage("CSS"),
+						new ProgrammingLanguage("Python")
+				);
+				languagesRepository.saveAll(languageList);
+				System.out.println("Inserted initial programming languages.");
+			} else {
+				System.out.println("Programming languages already exist, skipping insertion.");
+			}
+
+			if (frameworksRepository.count() == 0) {
+				List<Framework> frameworksList = Arrays.asList(
+						new Framework("Vue Js"),
+						new Framework("Angular"),
+						new Framework("React")
+				);
+				frameworksRepository.saveAll(frameworksList);
+				System.out.println("Inserted initial frameworks.");
+			} else {
+				System.out.println("Frameworks already exist, skipping insertion.");
+			}
 		};
-	}*/
+	}
 }
