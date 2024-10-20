@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenApiConfiguration {
     @Bean
-    public OpenAPI fromZeroApiOpenApi() {
+    public OpenAPI talentForgeApiOpenApi() {
         // General configuration
         var openAPI = new OpenAPI();
         openAPI.info(new Info()
